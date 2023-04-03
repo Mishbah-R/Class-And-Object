@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+class penjualan {
+    String nama;int harga;int jumlahBeli;
+
+    void isiData() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukan Nama Barang   : ");
+        nama = input.nextLine();
+        System.out.print("Masukan Harga Barang  : ");
+        harga = input.nextInt();
+        System.out.print("Masukan Jumlah Beli   : ");
+        jumlahBeli = input.nextInt();
+    }
+    void tampilData() {
+        System.out.println("Nama barang     = "+nama);
+        System.out.println("Harga barang    = "+harga);
+        System.out.println("Jumlah beli     = "+jumlahBeli);
+    }
+    int hitungTotal() {
+        return harga*jumlahBeli;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        penjualan dataJual = new penjualan();
+
+        dataJual.isiData();
+        dataJual.tampilData();
+
+        int total = dataJual.hitungTotal();
+        System.out.println("\nHarga Total \t= "+total);
+
+    }
+}
